@@ -128,22 +128,13 @@ $(document).ready(function(){
 
 			var j = Math.floor(i)
 
-			console.log("per action:")
-			console.log(saving_rate_base[j] * (card_prod + card_ship))
-			console.log(saving_rate_labor[j] * labor)
-			console.log(saving_rate_post[j] * mailing)
-
 			var unit_savings = (saving_rate_base[j] * (card_prod + card_ship)) + 
 							   (saving_rate_labor[j] * labor) +
 							   (saving_rate_post[j] * mailing);
 
 			unit_savings = unit_savings / 2
-
-
-			console.log("unit savings " + unit_savings)
 							   
 			cost_saved_int += (mem_base * unit_savings)
-			console.log(cost_saved_int + " for " + i)
 		}
 
 		// over 1,000,000,000,000 exceeds div space
@@ -328,11 +319,11 @@ $(document).ready(function(){
  				
 			}, 650);
 
-			var subscribe = $('#opt_in').is(":checked")
+			// var subscribe = $('#opt_in').is(":checked")
 
-			if (subscribe == true) {
-				console.log("subscribed!")
-			}
+			// if (subscribe == true) {
+			// 	console.log("subscribed!")
+			// }
 
 
 
@@ -396,7 +387,7 @@ $(document).ready(function(){
 				time = years + " year";
 			}
 
-			email_body  = "<h1 style = 'text-align: center;'>Ready to Go Digital?</h1><br><hr><br>"
+			email_body  = "<h1 style = 'text-align: center; color: black'>Digital Membership ROI Calculator Results</h1><br><hr><br>"
 						+ "<p>Running a membership program comes "
 						+ "with a lot of responsibility and "
 						+ "with traditional membership cards you may be spending "
