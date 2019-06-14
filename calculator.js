@@ -319,11 +319,15 @@ $(document).ready(function(){
  				
 			}, 650);
 
-			// var subscribe = $('#opt_in').is(":checked")
+			email_internal = "Digital Membership ROI Inquiry from: " + org;
 
-			// if (subscribe == true) {
-			// 	console.log("subscribed!")
-			// }
+			var subscribe = $('#opt_in').is(":checked")
+
+			if (subscribe == true) {
+				email_internal += "<p>Subscribed: Yes</p>"
+			}
+			else
+				email_internal += "<p>Subscribed: No</p>"
 
 
 
@@ -387,8 +391,7 @@ $(document).ready(function(){
 				time = years + " year";
 			}
 
-			email_body  = "<h1 style = 'text-align: center; color: black'>Digital Membership ROI Calculator Results</h1><br><hr><br>"
-						+ "<p>Running a membership program comes "
+			email_body  = "<p>Hi there,</p><br><p>Running a membership program comes "
 						+ "with a lot of responsibility and "
 						+ "with traditional membership cards you may be spending "
 						+ "more than you think. By offering your members digital membership "
@@ -397,14 +400,30 @@ $(document).ready(function(){
 						+ "<strong>reduce time and costs</strong>, "
 						+ "<strong>increase renewals</strong>, and <strong>save "
 						+ "the planet</strong>! Among the many advantages gained, here are a few "
-						+ "you can expect to gain over just " + time + " :</p>"
-						+ "<h3>💰 Total Saved Costs: " + cost_saved_str + "</h3>"
-						+ "<h3>⏰ Total Saved Time: " + time_saved + "</h3>"
-						+ "<h3>🌎 Total Carbon Footprint Reduced: " + CO2_saved + "</h3>"
-						+ "<h3>💸 Total Revenue Inrease: " + rev + "</h3><br><hr><br>"
-						+ "<h3>Want to learn more about our products? Schedule a free consultation "
-						+ "with a Cuseum expert simply by replying to this email!</h3>"
-						+ "<h3>Best,</h3><h3>The Cuseum Team</h3>";
+						+ "you can expect to gain over just " + time + ".</p>"
+						+ "<p><strong>Here are your Digital Membership ROI Calculator Results"
+						+ "<h4>💰 Total Saved Costs: " + cost_saved_str + "</h4>"
+						+ "<h4>⏰ Total Saved Time: " + time_saved + "</h4>"
+						+ "<h4>🌎 Total Carbon Footprint Reduced: " + CO2_saved + "</h4>"
+						+ "<h4>💸 Total Revenue Inrease: " + rev + "</h4><br><hr><br>"
+						+ "<p>Want to learn more about our products? Schedule a free consultation "
+						+ "with a Cuseum expert simply by replying to this email!</p>"
+						+ "<p>Best,</p><p>The Cuseum Team</p>";
+
+			email_internal += "<br><p><strong>Results:</strong><p>"
+							+ "<p>Member Base: " + mem_base + "</p>"
+							+ "<p>Membership Price: " + price + "</p>"	
+							+ "<p>Card Production Cost: " + card_prod + "</p>"
+							+ "<p>Postage: " + card_ship + "</p>"
+							+ "<p>Labor per hour: " + labor + "</p>"
+							+ "<p>Promotional Materials: " + mailing + "</p>"
+							+ "<p>Churn: " + churn + "</p>"
+							+ "<br><br><p><strong>Reported Savings:</strong><p>"
+							+ "<h3>💰 Total Saved Costs: " + cost_saved_str + "</h3>"
+							+ "<h3>⏰ Total Saved Time: " + time_saved + "</h3>"
+							+ "<h3>🌎 Total Carbon Footprint Reduced: " + CO2_saved + "</h3>"
+							+ "<h3>💸 Total Revenue Inrease: " + rev + "</h3><br><hr><br>";
+
 			$.ajax({
 				type: "POST",
 				url: "https://mandrillapp.com/api/1.0/messages/send.json",
@@ -419,8 +438,29 @@ $(document).ready(function(){
 								'type': 'to'
 							}
 						],
-						'subject': "Cuseum's Digital Membership",
+						'subject': "Results from Digital Membership ROI & Savings Calculator",
 						'html' : email_body
+					}
+				}
+			}).done(function(response) {
+				// console.log(response);
+			});
+
+			$.ajax({
+				type: "POST",
+				url: "https://mandrillapp.com/api/1.0/messages/send.json",
+				data: {
+					'key': "QYjR7JYAhGtIfrvh7dni2g",
+					'message': {
+						'from_email': 'hello@cuseum.com',
+						'to': [
+							{
+								'email': 'hello@cuseum.com',
+								'type': 'to'
+							}
+						],
+						'subject': "Inquiry: Digital Membership ROI",
+						'html' : email_internal
 					}
 				}
 			}).done(function(response) {
@@ -453,5 +493,4 @@ $(document).ready(function(){
 
 
 });
-
 

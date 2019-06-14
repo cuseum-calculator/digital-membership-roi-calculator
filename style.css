@@ -372,14 +372,14 @@ body, html {
     height: 60px;
     /*margin-left: -125px;*/
     margin: auto;
-    background-color: #96d680;
+    background-color: #4b8d94;;
     color: #fff;
     text-align: center;
     border-radius: 6px;
     position: fixed;
     z-index: 1;
     left: 0;right:0;
-    bottom: 60px;
+    top: 60px;
     font-size: 17px;
     white-space: nowrap;
     font-family: 'Montserrat', sans-serif;
@@ -388,7 +388,6 @@ body, html {
 }
 
 #toast #desc{
-
     color: #fff;
     padding: 15px;
     overflow: hidden;
@@ -411,14 +410,14 @@ body, html {
 }
 
 @-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;} 
-    to {bottom: 60px; opacity: 1;}
+    from {top: 0; opacity: 0;} 
+    to {top: 60px; opacity: 1;}
 }
 
 
 @keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 60px; opacity: 1;}
+    from {top: 0; opacity: 0;}
+    to {top: 60px; opacity: 1;}
 }
 
 @-webkit-keyframes fadeout {
@@ -606,7 +605,3 @@ body, html {
 		bottom: 0;
 		animation: fadeIn 1s;
 	}
-
-
-
-
