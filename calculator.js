@@ -392,7 +392,7 @@ $(document).ready(function(){
 						+ "with a lot of responsibility and "
 						+ "with traditional membership cards you may be spending "
 						+ "more than you think. By offering your members digital membership "
-						+ "cards you can create new <strong>outreach channels</strong>," 
+						+ "cards you can create new <strong>outreach channels</strong>, " 
 						+ "offer <strong>greater convenience</strong>, "
 						+ "<strong>reduce time and costs</strong>, "
 						+ "<strong>increase renewals</strong>, and <strong>save "
@@ -402,9 +402,9 @@ $(document).ready(function(){
 						+ "<h3>⏰ Total Saved Time: " + time_saved + "</h3>"
 						+ "<h3>🌎 Total Carbon Footprint Reduced: " + CO2_saved + "</h3>"
 						+ "<h3>💸 Total Revenue Inrease: " + rev + "</h3><br><hr><br>"
-						+ "<h5>Want to learn more about our products? Schedule a free consultation "
-						+ "with a Cuseum expert simply by replying to this email!</h5>"
-						+ "<h5>Best,</h5><h5>The Cuseum Team</h5>";
+						+ "<h3>Want to learn more about our products? Schedule a free consultation "
+						+ "with a Cuseum expert simply by replying to this email!</h3>"
+						+ "<h3>Best,</h3><h3>The Cuseum Team</h3>";
 			$.ajax({
 				type: "POST",
 				url: "https://mandrillapp.com/api/1.0/messages/send.json",
