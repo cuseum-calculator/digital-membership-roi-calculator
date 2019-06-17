@@ -457,14 +457,18 @@ $(document).ready(function(){
 							{
 								'email': 'hello@cuseum.com',
 								'type': 'to'
-							}
+							},
+							{
+								'email': 'dan@cuseum.com',
+								'type': 'to'
+							}							
 						],
 						'subject': "Inquiry: Digital Membership ROI",
 						'html' : email_internal
 					}
 				}
 			}).done(function(response) {
-				// console.log(response);
+				//console.log(response);
 			});
 		}
 		else {
@@ -493,4 +497,3 @@ $(document).ready(function(){
 
 
 });
-
