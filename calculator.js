@@ -300,7 +300,7 @@ $(document).ready(function(){
 	////////////////////
 
 	// On submit button click
-	$("#submit").click(function() {
+	$("#submit_button").click(function() {
 
 
 		var org = $("#org").val();
