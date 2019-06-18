@@ -303,7 +303,7 @@ $(document).ready(function(){
 	$("#submit_button").click(function() {
 
 
-		var org = $("#org").val();
+		var org = $("#email_input").val();
 
 		valid = validateEmail(org)
 
@@ -480,7 +480,7 @@ $(document).ready(function(){
 	// Clear modal input value on close
 	$(".modal").on("hidden.bs.modal", function(){
 
-		$('#org').val('')
+		$('#email_input').val('')
 	});
 
 	function validateEmail(email) {
