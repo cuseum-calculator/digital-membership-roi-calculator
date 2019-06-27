@@ -70,6 +70,18 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:500,700,800|Roboto:400,700&display=swap" rel="stylesheet">
 
+	<!-- Hotjar Tracking Code for cuseum.com -->
+	<script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:1381461,hjsv:6};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+
 	<!-- Start of Async Drift Code -->
 	<script>
 	"use strict";
@@ -349,10 +361,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		  					<input type="range" min="1" max="3" value="1" step = "0.50" class="slider" id="time_range">
 		  				</div>
 
-						<hr>
-						<h5>Total Saved Costs</h5>
-				   		<h3 id = "cost_saved"></h3>
-				   		<hr>
+						<hr> 
+							<h5>Total Saved Costs</h5>
+				   			<h3 id = "cost_saved"></h3>
+				   			<hr>
 
 				   		<!-- CURRENT COST INFORMATION
 				   		<h5>Current Costs</h5>
@@ -380,6 +392,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			   				<h5>Total Saved Time</h5>
 			   				<h3 id = "time_saved"></h3>
 			   				<hr>
+
 			   				<h5>Total Carbon Footprint Reduced</h5>
 			   				<h3 id = "CO2_saved"></h3>
 			   				<hr>
@@ -485,6 +498,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>			      
 		</div>
 	</div>
+
+	<!-- Modal for demo-->
+	<div class="modal fade" id="myModal_demo" role="dialog">
+		<div class="modal-dialog modal-lg">
+						    
+		<!--Modal content-->
+			<div class="modal-content">
+
+				<!--Cuseum Logo-->
+				<div class="modal-header">
+					<img class="img-responsive" src="pics/branding/cuseum_logo.png" alt="Cuseum logo" style = "width: 15%;">
+				</div>
+
+				<!--Description-->
+				<div class="modal-body">
+					<p>Enter your e-mail address and our team will be more than happy to show you how our digital membership cards actually work!</p>
+				</div>
+
+				<!--Input box-->
+				<div class="form-group form_custom">
+  					<label for="email_input_demo"></label>
+  					<input type="email" placeholder="name@email.com" class="form-control" id="email_input_demo">
+  					<br>
+  					<div class = "check_box">
+  						<input type="checkbox" name="subscribe" checked id="opt_in">    I’d like to join Cuseum’s 10,000 other cultural organization professionals in staying up to date on the latest trends, resources and happenings in the cultural space!
+  					</div>
+
+
+				</div>
+
+				<!--Close & Submit buttons-->
+				<div class="modal-footer">
+					<button type="button" id = "submit_button_demp" class="btn btn_custom_modal" data-dismiss="modal">Submit</button>
+				</div>
+				<!--Bootstrap Stuff-->
+			</div>			      
+		</div>
+	</div>
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
