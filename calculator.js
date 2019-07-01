@@ -477,10 +477,76 @@ $(document).ready(function(){
 
 	});
 
+	// On submit button click for demo request
+	$("#submit_button_demo").click(function() {
+
+
+		var org = $("#email_input_demo").val();
+
+		valid = validateEmail(org)
+
+		var email_body = ""
+
+		if (valid) {
+
+
+
+			setTimeout(function(){
+
+				launch_toast_demo()
+ 				
+			}, 650);
+
+			email_internal = "Digital Membership ROI Inquiry from: " + org;
+
+			var subscribe = $('#opt_in').is(":checked")
+
+			if (subscribe == true) {
+				email_internal += "<p>Subscribed: Yes</p>"
+			}
+			else
+				email_internal += "<p>Subscribed: No</p>"
+
+
+
+			email_internal += "<br><p>" + org + " requested a digital membership demo</p>"
+							+ "<br><p>Lead Source: ROI calculator</p>"
+
+			$.ajax({
+				type: "POST",
+				url: "https://mandrillapp.com/api/1.0/messages/send.json",
+				data: {
+					'key': "QYjR7JYAhGtIfrvh7dni2g",
+					'message': {
+						'from_email': 'hello@cuseum.com',
+						'to': [
+							{
+								'email': 'dan@cuseum.com',
+								'type': 'to'
+							}
+						],
+						'subject': "Demo Request: Digital Membership ROI & Savings Calculator",
+						'html' : email_internal
+					}
+				}
+			}).done(function(response) {
+				// console.log(response);
+			});
+		}
+		else {
+			alert("Sorry, looks like that is an invalid email!")
+		}
+
+	});
+	
+
+
 	// Clear modal input value on close
 	$(".modal").on("hidden.bs.modal", function(){
 
 		$('#email_input').val('')
+		$('#email_input_demo').val('')
+
 	});
 
 	function validateEmail(email) {
@@ -493,6 +559,12 @@ $(document).ready(function(){
     	var x = document.getElementById("toast")
    		x.className = "show_toast";
     	setTimeout(function(){ x.className = x.className.replace("show_toast", ""); }, 3000);
+	};
+
+	function launch_toast_demo() {
+    	var x = document.getElementById("toast_demo")
+   		x.className = "show_toast_demo";
+    	setTimeout(function(){ x.className = x.className.replace("show_toast_demo", ""); }, 3000);
 	};
 
 

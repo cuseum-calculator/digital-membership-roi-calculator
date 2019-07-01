@@ -415,9 +415,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		   				<button type="button" class="btn btn_custom" data-toggle="modal" data-target="#myModal" id="full_results_button">See Full Results!</button>
 
 		   				<div id="toast">
-							<div id="desc"><p><img src = "pics/icons/celly_white.png" style = "width: 40px; padding-bottom: 8px; padding-right: 10px;">Thank you for you submission. Check your inbox!</p>
+							<div id="desc"><p><img src = "pics/icons/celly_white.png" style = "width: 40px; padding-bottom: 8px; padding-right: 10px;">Thank you for your submission. Check your inbox!</p>
 							</div>
 						</div>
+
+						<div id="toast_demo">
+							<div id="desc_demo"><p><img src = "pics/icons/celly_white.png" style = "width: 40px; padding-bottom: 8px; padding-right: 10px;">Someone from our team will get in touch soon!</p>
+							</div>
+						</div>
+
 
 		   			</div>
 		   		</div>
@@ -453,7 +459,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 
 					<div class = "center">
-						<a href="https://cuseum.com/request-demo"  class="btn btn_custom_foot" role="button" target = "_blank" id = "free_demo_button">Get a free demo of<br>Cuseum’s Digital Membership solution</a>
+
+<!-- 						<a href="https://cuseum.com/request-demo"  class="btn btn_custom_foot" role="button" target = "_blank" id = "free_demo_button">Get a free demo of<br>Cuseum’s Digital Membership solution</a> -->
+
+						<button type="button" class="btn btn_custom_foot" data-toggle="modal" data-target="#myModal_demo" id="free_demo_button">Get a free demo of<br>Cuseum’s Digital Membership solution</button>
 					</div>
 
 
@@ -504,15 +513,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="modal-dialog modal-lg">
 						    
 		<!--Modal content-->
-			<div class="modal-content">
+			<div class="modal-content modal-demo-content">
 
 				<!--Cuseum Logo-->
-				<div class="modal-header">
+				<div class="modal-header modal-demo-header">
 					<img class="img-responsive" src="pics/branding/cuseum_logo.png" alt="Cuseum logo" style = "width: 15%;">
 				</div>
 
 				<!--Description-->
-				<div class="modal-body">
+				<div class="modal-body modal-demo-body">
 					<p>Enter your e-mail address and our team will be more than happy to show you how our digital membership cards actually work!</p>
 				</div>
 
@@ -529,8 +538,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 
 				<!--Close & Submit buttons-->
-				<div class="modal-footer">
-					<button type="button" id = "submit_button_demp" class="btn btn_custom_modal" data-dismiss="modal">Submit</button>
+				<div class="modal-footer modal-demo-footer">
+					<button type="button" id = "submit_button_demo" class="btn btn_custom_modal" data-dismiss="modal">Submit</button>
 				</div>
 				<!--Bootstrap Stuff-->
 			</div>			      

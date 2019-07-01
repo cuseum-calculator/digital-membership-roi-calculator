@@ -240,11 +240,14 @@ body, html {
 /*********** Modal Styling ***********/
 /*************************************/
 
+
+
 .modal-content {
 	font-size: 20px;
 	background-color: #4b8d94;
 	color: white;
 	padding: 0% 10%;
+	border-color: white;
 }
 
 .modal-body p {
@@ -260,6 +263,30 @@ body, html {
 }
 
 .modal-footer button:hover{
+   background-color: #f76f6f;
+   color: white; 
+}
+
+.modal-demo-content {
+	font-size: 20px;
+	background-color: #f5f5f5;
+	color: #4b8d94;
+	padding: 0% 10%;
+}
+
+.modal-demo-body p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;;
+	font-size: 24px;
+}
+.modal-demo-footer button {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	background-color: #fd4c4c; 
+	color: white;
+}
+
+.modal-footer-demo button:hover{
    background-color: #f76f6f;
    color: white; 
 }
@@ -429,6 +456,73 @@ body, html {
     from {opacity: 1;}
     to {opacity: 0;}
 }
+
+
+#toast_demo {
+    visibility: hidden;
+    display: none;
+    max-width: 50%;
+/*    height: 60px;*/
+    /*margin-left: -125px;*/
+    margin: auto;
+    background-color: #4b8d94;;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: fixed;
+    z-index: 1;
+    left: 0;right:0;
+    top: 60px;
+    font-size: 17px;
+/*    white-space: nowrap;*/
+    font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+
+}
+
+#toast_demo #desc_demo{
+    color: #fff;
+    padding: 15px;
+/*    overflow: hidden;*/
+/*	white-space: nowrap;*/
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+
+}
+
+#desc_demo p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+}
+
+#toast_demo.show_toast_demo {
+    visibility: visible;
+    display: inline-block;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 60px; opacity: 1;}
+}
+
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 60px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {opacity: 1;} 
+    to {opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
 
  /************************************************/
  /************ screen size handling **************/
