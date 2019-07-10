@@ -405,7 +405,7 @@ $(document).ready(function(){
 						+ "<h4>💰 Total Saved Costs: " + cost_saved_str + "</h4>"
 						+ "<h4>⏰ Total Saved Time: " + time_saved + "</h4>"
 						+ "<h4>🌎 Total Carbon Footprint Reduced: " + CO2_saved + "</h4>"
-						+ "<h4>💸 Total Revenue Inrease: " + rev + "</h4><br><hr><br>"
+						+ "<h4>💸 Total Revenue Increase: " + rev + "</h4><br><hr><br>"
 						+ "<p>Want to learn more about our products? Schedule a free consultation "
 						+ "with a Cuseum expert simply by replying to this email!</p>"
 						+ "<p>Best,</p><p>The Cuseum Team</p>";
@@ -422,7 +422,7 @@ $(document).ready(function(){
 							+ "<h3>💰 Total Saved Costs: " + cost_saved_str + "</h3>"
 							+ "<h3>⏰ Total Saved Time: " + time_saved + "</h3>"
 							+ "<h3>🌎 Total Carbon Footprint Reduced: " + CO2_saved + "</h3>"
-							+ "<h3>💸 Total Revenue Inrease: " + rev + "</h3><br><hr><br>";
+							+ "<h3>💸 Total Revenue Increase: " + rev + "</h3><br><hr><br>";
 
 			$.ajax({
 				type: "POST",
