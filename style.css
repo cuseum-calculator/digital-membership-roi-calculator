@@ -392,12 +392,11 @@ body, html {
 	padding-right: 20px;
 }
 
+
 #toast {
-    visibility: hidden;
+	visibility: hidden;
     display: none;
     max-width: 50%;
-    height: 60px;
-    /*margin-left: -125px;*/
     margin: auto;
     background-color: #4b8d94;;
     color: #fff;
@@ -408,17 +407,13 @@ body, html {
     left: 0;right:0;
     top: 60px;
     font-size: 17px;
-    white-space: nowrap;
     font-family: 'Montserrat', sans-serif;
 	font-weight: 800;
-
 }
 
 #toast #desc{
     color: #fff;
     padding: 15px;
-    overflow: hidden;
-	white-space: nowrap;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 800;
 

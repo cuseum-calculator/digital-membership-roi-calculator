@@ -377,7 +377,20 @@ $(document).ready(function(){
 			time_saved = time_saved.toLocaleString();
 
 			// 21g per card, 454g in a lb
+			// https://www.creditcards.com/credit-card-news/carbon-footprint-credit-card-1276.php
 			var CO2_saved = Math.round(years * ((mem_base * 21) / 454)).toLocaleString() + " lbs CO<sub>2</sub>"
+
+			// 1lb co2 = 25 sheets copy paper
+			// http://mit.edu/~slanou/www/shared_documents/Daniel/Save%20paper.docx
+			var paper_sheets = Math.round(years * ((mem_base * 21) / 454)) * 25
+
+			// 1 tree = 8333 sheets copy paper
+			//var trees = Math.round(paper_sheets / 8333)
+
+			//if (trees > 1)
+
+			var comparison = "<h4>🌲 That's equivalent to saving " + paper_sheets.toLocaleString() + " sheets of printer paper!</h4>"
+
 
 			// Revenue calculations
 			var rev = "$" + (mem_base * rate * price * years).toLocaleString()
@@ -391,12 +404,17 @@ $(document).ready(function(){
 				time = years + " year";
 			}
 
+
+
+
+
 			email_body  = "<p>Hi there,</p><br><p>Running a membership program comes "
 						+ "with a lot of responsibility and "
 						+ "with traditional membership cards you may be spending "
 						+ "more than you think. By offering your members digital membership "
 						+ "cards you can create new <strong>outreach channels</strong>, " 
 						+ "offer <strong>greater convenience</strong>, "
+						+ "<strong>increase member engagement</strong>, "
 						+ "<strong>reduce time and costs</strong>, "
 						+ "<strong>increase renewals</strong>, and <strong>save "
 						+ "the planet</strong>! Among the many advantages gained, here are a few "
@@ -404,8 +422,9 @@ $(document).ready(function(){
 						+ "<p><strong>Here are your Digital Membership ROI Calculator Results"
 						+ "<h4>💰 Total Saved Costs: " + cost_saved_str + "</h4>"
 						+ "<h4>⏰ Total Saved Time: " + time_saved + "</h4>"
+						+ "<h4>💸 Total Revenue Increase: " + rev + "</h4>"
 						+ "<h4>🌎 Total Carbon Footprint Reduced: " + CO2_saved + "</h4>"
-						+ "<h4>💸 Total Revenue Increase: " + rev + "</h4><br><hr><br>"
+						+ comparison + "<br><hr><br>"
 						+ "<p>Want to learn more about our products? Schedule a free consultation "
 						+ "with a Cuseum expert simply by replying to this email!</p>"
 						+ "<p>Best,</p><p>The Cuseum Team</p>";
@@ -421,14 +440,16 @@ $(document).ready(function(){
 							+ "<br><br><p><strong>Reported Savings:</strong><p>"
 							+ "<h3>💰 Total Saved Costs: " + cost_saved_str + "</h3>"
 							+ "<h3>⏰ Total Saved Time: " + time_saved + "</h3>"
-							+ "<h3>🌎 Total Carbon Footprint Reduced: " + CO2_saved + "</h3>"
-							+ "<h3>💸 Total Revenue Increase: " + rev + "</h3><br><hr><br>";
+							+ "<h4>💸 Total Revenue Increase: " + rev + "</h4>"
+							+ "<h4>🌎 Total Carbon Footprint Reduced: " + CO2_saved + "</h4>"
+							+ comparison + "<br><hr><br>"
 
 			$.ajax({
 				type: "POST",
 				url: "https://mandrillapp.com/api/1.0/messages/send.json",
 				data: {
 					'key': "QYjR7JYAhGtIfrvh7dni2g",
+					// 'key': "kEbkt8D39O969yR35-nJUQ",
 					'message': {
 						'from_email': 'hello@cuseum.com',
 						'to': [
@@ -451,6 +472,7 @@ $(document).ready(function(){
 				url: "https://mandrillapp.com/api/1.0/messages/send.json",
 				data: {
 					'key': "QYjR7JYAhGtIfrvh7dni2g",
+					// 'key': "kEbkt8D39O969yR35-nJUQ",
 					'message': {
 						'from_email': 'hello@cuseum.com',
 						'to': [
