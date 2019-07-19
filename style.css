@@ -427,8 +427,8 @@ body, html {
 #toast.show_toast {
     visibility: visible;
     display: inline-block;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+    animation: fadein 0.5s, fadeout 0.5s 3.5s;
 }
 
 @-webkit-keyframes fadein {
@@ -495,6 +495,66 @@ body, html {
     display: inline-block;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 60px; opacity: 1;}
+}
+
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 60px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {opacity: 1;} 
+    to {opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+
+#toast_spam {
+	visibility: hidden;
+    display: none;
+    max-width: 50%;
+    margin: auto;
+    background-color: #fd4c4c; 
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: fixed;
+    z-index: 1;
+    left: 0;right:0;
+    top: 60px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+}
+
+#toast_spam #desc_spam{
+    color: #fff;
+    padding: 15px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+
+}
+
+#desc_spam p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+}
+
+#toast_spam.show_toast_spam {
+    visibility: visible;
+    display: inline-block;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 5.5s;
+    animation: fadein 0.5s, fadeout 0.5s 5.5s;
 }
 
 @-webkit-keyframes fadein {

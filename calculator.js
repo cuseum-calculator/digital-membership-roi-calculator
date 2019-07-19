@@ -319,6 +319,13 @@ $(document).ready(function(){
  				
 			}, 650);
 
+			setTimeout(function(){
+
+				launch_toast_spam();
+ 				
+			}, 5500);
+
+
 			email_internal = "Digital Membership ROI Inquiry from: " + org;
 
 			var subscribe = $('#opt_in').is(":checked")
@@ -464,7 +471,7 @@ $(document).ready(function(){
 					}
 				}
 			}).done(function(response) {
-				// console.log(response);
+				//console.log(response);
 			});
 
 			$.ajax({
@@ -472,7 +479,7 @@ $(document).ready(function(){
 				url: "https://mandrillapp.com/api/1.0/messages/send.json",
 				data: {
 					'key': "QYjR7JYAhGtIfrvh7dni2g",
-					// 'key': "kEbkt8D39O969yR35-nJUQ",
+					 // 'key': "kEbkt8D39O969yR35-nJUQ",
 					'message': {
 						'from_email': 'hello@cuseum.com',
 						'to': [
@@ -516,8 +523,15 @@ $(document).ready(function(){
 			setTimeout(function(){
 
 				launch_toast_demo()
+
  				
 			}, 650);
+
+			setTimeout(function(){
+
+				launch_toast_spam();
+ 				
+			}, 5500);
 
 			email_internal = "Digital Membership ROI Inquiry from: " + org;
 
@@ -539,6 +553,7 @@ $(document).ready(function(){
 				url: "https://mandrillapp.com/api/1.0/messages/send.json",
 				data: {
 					'key': "QYjR7JYAhGtIfrvh7dni2g",
+					//'key': "kEbkt8D39O969yR35-nJUQ", //test
 					'message': {
 						'from_email': 'hello@cuseum.com',
 						'to': [
@@ -580,14 +595,21 @@ $(document).ready(function(){
 	function launch_toast() {
     	var x = document.getElementById("toast")
    		x.className = "show_toast";
-    	setTimeout(function(){ x.className = x.className.replace("show_toast", ""); }, 3000);
+    	setTimeout(function(){ x.className = x.className.replace("show_toast", ""); }, 4000);
 	};
 
 	function launch_toast_demo() {
     	var x = document.getElementById("toast_demo")
    		x.className = "show_toast_demo";
     	setTimeout(function(){ x.className = x.className.replace("show_toast_demo", ""); }, 3000);
+
 	};
+
+	function launch_toast_spam() {
+		var x = document.getElementById("toast_spam")
+   		x.className = "show_toast_spam";
+    	setTimeout(function(){ x.className = x.className.replace("show_toast_spam", ""); }, 6000);
+	}
 
 
 });
